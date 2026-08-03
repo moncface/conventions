@@ -1,6 +1,6 @@
 {
   "name": "@moncface/colophon",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Colophon — a machine-readable colophon (authorship, license, provenance manifest) for single-file distributed artifacts. Spec v0.1 forthcoming.",
   "license": "CC-BY-4.0",
   "author": "moncface (https://moncface.com)",
