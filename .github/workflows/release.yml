@@ -12,13 +12,14 @@ jobs:
   dry-run:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: "24.x"
           registry-url: "https://registry.npmjs.org"
       - run: npm install -g npm@latest   # OIDC needs recent npm (>=11.5.1)
       - run: npm install
+      - run: for d in packages/*/; do cp LICENSE "$d"; done
       - name: Dry run (show exactly what would be published)
         run: npm publish --workspaces --access public --dry-run
 
@@ -27,12 +28,13 @@ jobs:
     runs-on: ubuntu-latest
     environment: npm-publish
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: "24.x"
           registry-url: "https://registry.npmjs.org"
       - run: npm install -g npm@latest
       - run: npm install
+      - run: for d in packages/*/; do cp LICENSE "$d"; done
       - name: Publish all workspaces (OIDC, no token)
         run: npm publish --workspaces --access public

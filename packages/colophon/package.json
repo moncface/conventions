@@ -1,6 +1,6 @@
 {
   "name": "@moncface/colophon",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Colophon — a machine-readable colophon (authorship, license, provenance manifest) for single-file distributed artifacts. Spec v0.1 forthcoming.",
   "license": "CC-BY-4.0",
   "author": "moncface (https://moncface.com)",
@@ -10,7 +10,8 @@
     "url": "git+https://github.com/moncface/conventions.git"
   },
   "files": [
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "keywords": [
     "moncface",

@@ -1,6 +1,6 @@
 {
   "name": "@moncface/koine",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Koine — a common wrapper format for LLM-mediated data interchange (meta + kind-declared payload). Spec v0.1 forthcoming.",
   "license": "CC-BY-4.0",
   "author": "moncface (https://moncface.com)",
@@ -10,7 +10,8 @@
     "url": "git+https://github.com/moncface/conventions.git"
   },
   "files": [
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "keywords": [
     "moncface",
