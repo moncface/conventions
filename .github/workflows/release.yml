@@ -1,0 +1,37 @@
+name: Publish to npm
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+  id-token: write   # OIDC for npm Trusted Publishing
+
+jobs:
+  dry-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24.x"
+          registry-url: "https://registry.npmjs.org"
+      - run: npm install -g npm@latest   # OIDC needs recent npm (>=11.5.1)
+      - run: npm install
+      - name: Dry run (show exactly what would be published)
+        run: npm publish --workspaces --access public --dry-run
+
+  publish:
+    needs: dry-run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24.x"
+          registry-url: "https://registry.npmjs.org"
+      - run: npm install -g npm@latest
+      - run: npm install
+      - name: Publish all workspaces (OIDC, no token)
+        run: npm publish --workspaces --access public
