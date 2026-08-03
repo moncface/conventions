@@ -1,6 +1,6 @@
 {
   "name": "colophon-spec",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Reserved name. The canonical package is @moncface/colophon (the Colophon convention by moncface).",
   "license": "CC-BY-4.0",
   "author": "moncface (https://moncface.com)",
@@ -9,6 +9,13 @@
     "type": "git",
     "url": "git+https://github.com/moncface/conventions.git"
   },
-  "files": ["README.md"],
-  "keywords": ["moncface", "specification", "llm", "metadata"]
+  "files": [
+    "README.md"
+  ],
+  "keywords": [
+    "moncface",
+    "specification",
+    "llm",
+    "metadata"
+  ]
 }
